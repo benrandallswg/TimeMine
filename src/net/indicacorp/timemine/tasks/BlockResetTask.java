@@ -38,7 +38,7 @@ public class BlockResetTask {
     private class ResetTask implements Runnable {
         @Override
         public void run() {
-            Database database = new Database(plugin);
+            Database database = new Database();
             if (inProgress) return;
             inProgress = true;
 

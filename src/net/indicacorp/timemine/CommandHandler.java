@@ -82,7 +82,7 @@ public class CommandHandler implements CommandExecutor {
     }
 
     private void handleInfo(CommandSender commandSender) {
-        final Database database = new Database(plugin);
+        final Database database = new Database();
         final Player player = (Player) commandSender;
         final Block targetBlock = player.getTargetBlockExact(30, FluidCollisionMode.ALWAYS);
         final int x = targetBlock.getX();
@@ -113,7 +113,7 @@ public class CommandHandler implements CommandExecutor {
     }
 
     private void handleRemove(CommandSender commandSender, final boolean all) {
-        final Database database = new Database(plugin);
+        final Database database = new Database();
         final Player player = (Player) commandSender;
         //Stop reset task while removing
         plugin.stopBlockResetTask();
@@ -166,7 +166,7 @@ public class CommandHandler implements CommandExecutor {
     }
 
     private void handleList(CommandSender commandSender) {
-        final Database database = new Database(plugin);
+        final Database database = new Database();
         final Player player = (Player) commandSender;
         StringBuilder message = new StringBuilder();
         message.append(prefix).append(" Active  Blocks:");
@@ -194,7 +194,7 @@ public class CommandHandler implements CommandExecutor {
     }
 
     private void handleAdd(CommandSender commandSender, String[] args) {
-        final Database database = new Database(plugin);
+        final Database database = new Database();
         final Player player = (Player) commandSender;
         final Block targetBlock = player.getTargetBlockExact(30, FluidCollisionMode.ALWAYS);
         if (args.length < 3) {
