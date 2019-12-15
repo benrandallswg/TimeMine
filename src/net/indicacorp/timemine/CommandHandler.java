@@ -1,5 +1,6 @@
 package net.indicacorp.timemine;
 
+import net.indicacorp.timemine.data.Database;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.command.Command;

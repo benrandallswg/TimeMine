@@ -1,5 +1,7 @@
-package net.indicacorp.timemine;
+package net.indicacorp.timemine.tasks;
 
+import net.indicacorp.timemine.TimeMine;
+import net.indicacorp.timemine.data.Database;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.World;

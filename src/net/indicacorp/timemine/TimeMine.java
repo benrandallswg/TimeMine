@@ -1,5 +1,8 @@
 package net.indicacorp.timemine;
 
+import net.indicacorp.timemine.data.Database;
+import net.indicacorp.timemine.listeners.EventListener;
+import net.indicacorp.timemine.tasks.BlockResetTask;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -9,12 +12,17 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.sql.ResultSet;
 
 public class TimeMine extends JavaPlugin {
-    Database database = new Database(this);
-    final BlockResetTask blockResetTask = new BlockResetTask(this, getConfig().getInt("timemine.block_reset_interval"));
+
+    private static TimeMine instance;
+    private static Database database;
+    private static BlockResetTask blockResetTask;
 
     @Override
     public void onEnable() {
         super.onEnable();
+        instance = this;
+        database = new Database();
+        blockResetTask = new BlockResetTask(this, getConfig().getInt("timemine.block_reset_interval"));
 
         //Save default config.yml if not exists
         saveDefaultConfig();
@@ -84,5 +92,9 @@ public class TimeMine extends JavaPlugin {
         } finally {
             database.closeConnection();
         }
+    }
+
+    public static TimeMine getInstance(){
+        return instance;
     }
 }

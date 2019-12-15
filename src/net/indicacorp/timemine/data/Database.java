@@ -1,14 +1,16 @@
-package net.indicacorp.timemine;
+package net.indicacorp.timemine.data;
 
+import net.indicacorp.timemine.TimeMine;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.sql.*;
 
 public class Database {
+
     TimeMine plugin;
 
-    public Database(TimeMine instance) {
-        plugin = instance;
+    public Database() {
+        plugin = TimeMine.getInstance();
     }
 
     private Connection connection = null;
