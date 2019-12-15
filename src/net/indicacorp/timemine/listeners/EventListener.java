@@ -19,15 +19,13 @@ import java.util.Iterator;
 
 public class EventListener implements Listener {
 
-    private TimeMine plugin;
+    private TimeMine plugin = TimeMine.getInstance();
     private static ArrayList<Material> TOOLS = new ArrayList<Material>(){{
         add(Material.DIAMOND_PICKAXE);
         add(Material.IRON_PICKAXE);
         add(Material.STONE_PICKAXE);
         add(Material.GOLDEN_PICKAXE);
     }};
-
-    public EventListener(TimeMine instance) { plugin = instance; }
 
     @EventHandler(ignoreCancelled = true)
     public void onBlockBreak(BlockBreakEvent event) {

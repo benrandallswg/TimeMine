@@ -47,7 +47,7 @@ public class TimeMine extends JavaPlugin {
             getCommand("timemine").setExecutor(new CommandHandler(this));
 
             //Register listeners
-            getServer().getPluginManager().registerEvents(new EventListener(this), this);
+            getServer().getPluginManager().registerEvents(new EventListener(), this);
 
             getLogger().info("Plugin loaded successfully.");
         } catch(Exception e) {
