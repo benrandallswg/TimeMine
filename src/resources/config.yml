@@ -1,0 +1,14 @@
+mysql:
+  username: "username"
+  password: "password"
+  host: "localhost"
+  port: "3306"
+  database: "database"
+
+timemine:
+  # In seconds. How often the plugin should check for expired TimeMine blocks. <30 is not recommended.
+  block_reset_interval: 30
+
+  prefix: "[TimeMine]"
+
+  something: "test"
